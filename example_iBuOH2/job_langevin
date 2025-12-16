@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH -c 1
+#SBATCH -n 1
+#SBATCH -N 1               # number of nodes
+#SBATCH -J MACE_shot_traj  # job name 
+#SBATCH -o dyn_out%J       # std out
+#SBATCH -e dyn_err%J       # std err 
+#SBATCH -p partition        # partition 
+#SBATCH -t 11:00:00        # time limit as hh:mm:ss
+
+source /path/to/python/environment/bin/activate 
+
+python ../langevin.py 
